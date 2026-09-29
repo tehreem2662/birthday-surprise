@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For Someone Special ❤️</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: #050505;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* =========================
+           BACKGROUND VIDEO
+        ========================== */
+
+        .video-bg {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -3;
+        }
+
+        .video-overlay {
+            position: fixed;
+            inset: 0;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(0,0,0,0.92),
+                    rgba(35,0,8,0.72),
+                    rgba(0,0,0,0.86)
+                );
+            z-index: -2;
+        }
+
+        .red-glow {
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: rgba(110, 0, 25, 0.25);
+            filter: blur(100px);
+            border-radius: 50%;
+            top: 20%;
+            left: 35%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================== */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 20;
+
+            padding: 18px 7%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            background: rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .logo {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 30px;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #a7193b;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #d53a5d;
+        }
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            min-height: 100vh;
+            padding: 120px 7% 60px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-container {
+            width: 100%;
+            max-width: 1150px;
+
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 70px;
+
+            align-items: center;
+        }
+
+        /* =========================
+           PHOTO CARD
+        ========================== */
+
+        .photo-area {
+            display: flex;
+            justify-content: center;
+        }
+
+        .photo-card {
+            position: relative;
+            width: 340px;
+            padding: 12px;
+
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.18);
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 20px 70px rgba(0,0,0,0.65),
+                0 0 45px rgba(130,0,25,0.28);
+
+            transform: rotate(-2deg);
+            transition: 0.4s ease;
+        }
+
+        .photo-card:hover {
+            transform: rotate(0deg) scale(1.03);
+        }
+
+        .photo-card img {
+            display: block;
+            width: 100%;
+            height: 440px;
+
+            object-fit: cover;
+
+            border-radius: 18px;
+        }
+
+        .photo-caption {
+            text-align: center;
+            padding: 13px 5px 5px;
+
+            font-family: "Cormorant Garamond", serif;
+            font-size: 20px;
+            color: #f5dce2;
+        }
+
+        /* =========================
+           HERO TEXT
+        ========================== */
+
+        .hero-text {
+            text-align: left;
+        }
+
+        .small-title {
+            color: #d24b69;
+            font-size: 13px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(55px, 7vw, 95px);
+            line-height: 0.9;
+            font-weight: 600;
+
+            margin-bottom: 25px;
+
+            text-shadow:
+                0 0 25px rgba(180,0,40,0.25);
+        }
+
+        .hero h1 span {
+            color: #a7193b;
+        }
+
+        .hero p {
+            max-width: 570px;
+            color: #e4dfe1;
+            font-size: 15px;
+            line-height: 1.9;
+            margin-bottom: 35px;
+        }
+
+        /* =========================
+           BUTTON
+        ========================== */
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+
+            padding: 14px 27px;
+
+            border-radius: 50px;
+
+            background: #7d102d;
+            color: #fff;
+
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+
+            box-shadow:
+                0 10px 30px rgba(120,0,30,0.35);
+
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #a7193b;
+            transform: translateY(-3px);
+            box-shadow:
+                0 15px 35px rgba(150,0,40,0.45);
+        }
+
+        /* =========================
+           HEARTS
+        ========================== */
+
+        .heart {
+            position: fixed;
+            color: rgba(180, 20, 55, 0.35);
+            font-size: 18px;
+            animation: floatHeart 7s linear infinite;
+            pointer-events: none;
+        }
+
+        .heart.one {
+            left: 8%;
+            bottom: -30px;
+        }
+
+        .heart.two {
+            left: 82%;
+            bottom: -30px;
+            animation-delay: 2s;
+        }
+
+        .heart.three {
+            left: 48%;
+            bottom: -30px;
+            animation-delay: 4s;
+        }
+
+        @keyframes floatHeart {
+
+            0% {
+                transform: translateY(0) scale(0.8);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100vh) scale(1.4);
+                opacity: 0;
+            }
+
+        }
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 850px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                gap: 13px;
+            }
+
+            nav ul li a {
+                font-size: 10px;
+            }
+
+            .hero {
+                padding: 110px 6% 50px;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 45px;
+            }
+
+            .photo-area {
+                order: 1;
+            }
+
+            .hero-text {
+                order: 2;
+                text-align: center;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .photo-card {
+                width: min(310px, 90vw);
+            }
+
+            .photo-card img {
+                height: 380px;
+            }
+
+            .hero h1 {
+                font-size: 58px;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            nav {
+                padding: 14px 4%;
+            }
+
+            .logo {
+                font-size: 24px;
+            }
+
+            nav ul {
+                gap: 9px;
+            }
+
+            nav ul li a {
+                font-size: 9px;
+            }
+
+            .hero {
+                padding-top: 100px;
+            }
+
+            .photo-card {
+                width: 280px;
+            }
+
+            .photo-card img {
+                height: 350px;
+            }
+
+            .hero h1 {
+                font-size: 50px;
+            }
+
+            .hero p {
+                font-size: 13px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Background Video -->
+
+    <video class="video-bg" autoplay muted loop playsinline>
+        <source src="birthday.mp4" type="video/mp4">
+    </video>
+
+    <div class="video-overlay"></div>
+    <div class="red-glow"></div>
+
+
+    <!-- Navbar -->
+
+    <nav>
+
+        <div class="logo">
+            H<span>♥</span>
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="birthday.html">Birthday</a>
+            </li>
+
+            <li>
+                <a href="memories.html">Memories</a>
+            </li>
+
+            <li>
+                <a href="little-note.html">A Little Note</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- Floating Hearts -->
+
+    <div class="heart one">♥</div>
+    <div class="heart two">♥</div>
+    <div class="heart three">♥</div>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-container">
+
+            <!-- PHOTO -->
+
+            <div class="photo-area">
+
+                <div class="photo-card">
+
+                    <img
+                        src="image/photo4.jpeg"
+                        alt="A special picture"
+                    >
+
+                    <div class="photo-caption">
+                        A little piece of happiness ❤️
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- TEXT -->
+
+            <div class="hero-text">
+
+                <div class="small-title">
+                    ✦ a little something for you ✦
+                </div>
+
+                <h1>
+                    Happy<br>
+                    <span>Birthday</span> ❤️
+                </h1>
+
+                <p>
+                    Sometimes a simple birthday wish isn't enough...
+                    so I made you a little something instead. 🥹❤️
+                    A few memories, a few smiles, and a tiny surprise
+                    waiting at the end.
+                </p>
+
+                <a href="birthday.html" class="btn">
+                    Let's Begin
+                    <i class="fa-solid fa-heart"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+</html>

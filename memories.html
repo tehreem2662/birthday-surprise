@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Memories ❤️</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: "Poppins", sans-serif;
+            color: #fff;
+
+            background:
+                radial-gradient(
+                    circle at 50% 0%,
+                    #410817 0%,
+                    #100409 38%,
+                    #030303 75%
+                );
+
+            overflow-x: hidden;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================== */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+
+            padding: 18px 7%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(16px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+
+            z-index: 20;
+        }
+
+        .logo {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 30px;
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: #a7193b;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #d74365;
+        }
+
+        /* =========================
+           MAIN
+        ========================== */
+
+        main {
+            width: 100%;
+            max-width: 1150px;
+            margin: auto;
+
+            padding: 130px 7% 80px;
+        }
+
+        /* =========================
+           HEADING
+        ========================== */
+
+        .heading {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .small-title {
+            color: #d24768;
+            font-size: 12px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: clamp(55px, 8vw, 90px);
+
+            line-height: 0.95;
+
+            margin-bottom: 20px;
+        }
+
+        h1 span {
+            color: #a7193b;
+        }
+
+        .intro {
+            max-width: 650px;
+            margin: auto;
+
+            color: #d5ced1;
+
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        /* =========================
+           MEMORY GRID
+        ========================== */
+
+        .memory-grid {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 30px;
+        }
+
+        /* =========================
+           MEMORY CARD
+        ========================== */
+
+        .memory-card {
+            position: relative;
+
+            padding: 12px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(130,10,40,0.22),
+                    rgba(255,255,255,0.04)
+                );
+
+            border: 1px solid rgba(255,255,255,0.1);
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 20px 60px rgba(0,0,0,0.45);
+
+            transition: 0.4s ease;
+        }
+
+        .memory-card:hover {
+            transform: translateY(-8px);
+
+            border-color: rgba(180,25,60,0.45);
+
+            box-shadow:
+                0 25px 70px rgba(100,0,30,0.35);
+        }
+
+        /* =========================
+           VIDEO
+        ========================== */
+
+        .video-wrapper {
+            overflow: hidden;
+            border-radius: 18px;
+            background: #000;
+        }
+
+        video {
+            display: block;
+
+            width: 100%;
+
+            height: 360px;
+
+            object-fit: cover;
+
+            background: #000;
+        }
+
+        /* =========================
+           CARD TEXT
+        ========================== */
+
+        .memory-text {
+            padding: 20px 12px 15px;
+
+            text-align: center;
+        }
+
+        .memory-number {
+            color: #b72a4d;
+
+            font-size: 11px;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 6px;
+        }
+
+        .memory-text h2 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 30px;
+
+            margin-bottom: 7px;
+        }
+
+        .memory-text p {
+            color: #c9c2c5;
+
+            font-size: 12px;
+
+            line-height: 1.7;
+        }
+
+        /* =========================
+           BOTTOM MESSAGE
+        ========================== */
+
+        .bottom-message {
+            max-width: 700px;
+
+            margin: 65px auto 45px;
+
+            text-align: center;
+
+            padding: 35px 25px;
+
+            border-top: 1px solid rgba(255,255,255,0.08);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .bottom-message p {
+            color: #d8d1d4;
+
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 25px;
+
+            line-height: 1.5;
+        }
+
+        /* =========================
+           BUTTON
+        ========================== */
+
+        .continue {
+            display: flex;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            padding: 14px 28px;
+
+            background: #7d102d;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 50px;
+
+            font-size: 13px;
+
+            transition: 0.3s;
+
+            box-shadow:
+                0 10px 30px rgba(120,0,30,0.35);
+        }
+
+        .btn:hover {
+            background: #a7193b;
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 15px 40px rgba(150,0,40,0.4);
+        }
+
+        /* =========================
+           HEARTS
+        ========================== */
+
+        .heart {
+            position: fixed;
+
+            color: rgba(180,20,55,0.28);
+
+            font-size: 18px;
+
+            pointer-events: none;
+
+            animation: floatHeart 8s linear infinite;
+        }
+
+        .heart.one {
+            left: 7%;
+            bottom: -30px;
+        }
+
+        .heart.two {
+            left: 90%;
+            bottom: -30px;
+            animation-delay: 2s;
+        }
+
+        .heart.three {
+            left: 48%;
+            bottom: -30px;
+            animation-delay: 4s;
+        }
+
+        @keyframes floatHeart {
+
+            0% {
+                transform: translateY(0) scale(.8);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100vh) scale(1.4);
+                opacity: 0;
+            }
+
+        }
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 750px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                gap: 12px;
+            }
+
+            nav a {
+                font-size: 9px;
+            }
+
+            main {
+                padding: 110px 5% 60px;
+            }
+
+            .memory-grid {
+                grid-template-columns: 1fr;
+            }
+
+            video {
+                height: 380px;
+            }
+
+            .bottom-message p {
+                font-size: 21px;
+            }
+
+        }
+
+        @media (max-width: 450px) {
+
+            .logo {
+                font-size: 24px;
+            }
+
+            nav ul {
+                gap: 8px;
+            }
+
+            nav a {
+                font-size: 8px;
+            }
+
+            video {
+                height: 330px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav>
+
+        <div class="logo">
+            H<span>♥</span>
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="birthday.html">
+                    Birthday
+                </a>
+            </li>
+
+            <li>
+                <a href="memories.html" class="active">
+                    Memories
+                </a>
+            </li>
+
+            <li>
+                <a href="little-note.html">
+                    A Little Note
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- FLOATING HEARTS -->
+
+    <div class="heart one">♥</div>
+    <div class="heart two">♥</div>
+    <div class="heart three">♥</div>
+
+
+    <main>
+
+        <!-- HEADING -->
+
+        <section class="heading">
+
+            <div class="small-title">
+                ✦ little moments ✦
+            </div>
+
+            <h1>
+                Our Little <span>Memories</span> ❤️
+            </h1>
+
+            <p class="intro">
+                Some moments deserve to be watched again and again.
+                🥹❤️ So here are a few little memories saved just
+                for you.
+            </p>
+
+        </section>
+
+
+        <!-- MEMORY VIDEOS -->
+
+        <section class="memory-grid">
+
+
+            <!-- VIDEO 1 -->
+
+            <div class="memory-card">
+
+                <div class="video-wrapper">
+
+                    <video
+                        controls
+                        playsinline
+                        preload="metadata">
+
+                        <source
+                            src="image/birthday3.mp4"
+                            type="video/mp4">
+
+                        Your browser does not support video.
+
+                    </video>
+
+                </div>
+
+                <div class="memory-text">
+
+                    <div class="memory-number">
+                        Memory 01
+                    </div>
+
+                    <h2>
+                        A Little Memory ❤️
+                    </h2>
+
+                    <p>
+                        One of those little moments worth keeping.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- VIDEO 2 -->
+
+            <div class="memory-card">
+
+                <div class="video-wrapper">
+
+                    <video
+                        controls
+                        playsinline
+                        preload="metadata">
+
+                        <source
+                            src="image/birthday4.mp4"
+                            type="video/mp4">
+
+                        Your browser does not support video.
+
+                    </video>
+
+                </div>
+
+                <div class="memory-text">
+
+                    <div class="memory-number">
+                        Memory 02
+                    </div>
+
+                    <h2>
+                        Another Little Moment ❤️
+                    </h2>
+
+                    <p>
+                        Because some memories deserve another watch.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- VIDEO 3 -->
+
+            <div class="memory-card">
+
+                <div class="video-wrapper">
+
+                    <video
+                        controls
+                        playsinline
+                        preload="metadata">
+
+                        <source
+                            src="image/birthday5.mp4"
+                            type="video/mp4">
+
+                        Your browser does not support video.
+
+                    </video>
+
+                </div>
+
+                <div class="memory-text">
+
+                    <div class="memory-number">
+                        Memory 03
+                    </div>
+
+                    <h2>
+                        This One ❤️
+                    </h2>
+
+                    <p>
+                        A tiny reminder of a beautiful little moment.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- VIDEO 4 -->
+
+            <div class="memory-card">
+
+                <div class="video-wrapper">
+
+                    <video
+                        controls
+                        playsinline
+                        preload="metadata">
+
+                        <source
+                            src="image/birthday7.mp4"
+                            type="video/mp4">
+
+                        Your browser does not support video.
+
+                    </video>
+
+                </div>
+
+                <div class="memory-text">
+
+                    <div class="memory-number">
+                        Memory 04
+                    </div>
+
+                    <h2>
+                        One More For You ❤️
+                    </h2>
+
+                    <p>
+                        And yes... I saved one more little moment.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- BOTTOM MESSAGE -->
+
+        <section class="bottom-message">
+
+            <p>
+                "The best memories are the ones that make you
+                smile without even trying." ❤️
+            </p>
+
+        </section>
+
+
+        <!-- NEXT -->
+
+        <div class="continue">
+
+            <a href="little-note.html" class="btn">
+                Continue ❤️
+            </a>
+
+        </div>
+
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A Little Note ❤️</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        .note-page {
+            min-height: 100vh;
+            padding: 140px 20px 90px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(120, 0, 25, 0.18),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at 80% 80%,
+                    rgba(170, 20, 40, 0.12),
+                    transparent 35%
+                ),
+                #080506;
+        }
+
+        .note-box {
+            width: min(800px, 100%);
+            padding: 65px 55px;
+
+            text-align: center;
+
+            background: rgba(25, 7, 10, 0.88);
+
+            border: 1px solid rgba(190, 55, 75, 0.30);
+
+            border-radius: 30px;
+
+            box-shadow:
+                0 25px 80px rgba(0, 0, 0, 0.55),
+                0 0 50px rgba(120, 0, 20, 0.12);
+
+            backdrop-filter: blur(12px);
+        }
+
+        .note-icon {
+            width: 78px;
+            height: 78px;
+
+            margin: 0 auto 25px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 50%;
+
+            background: rgba(130, 0, 25, 0.25);
+
+            border: 1px solid rgba(220, 80, 100, 0.30);
+
+            color: #ffb4bc;
+
+            font-size: 30px;
+
+            box-shadow:
+                0 0 30px rgba(150, 20, 40, 0.20);
+        }
+
+        .note-label {
+            color: #c97882;
+
+            font-size: 12px;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 18px;
+        }
+
+        .note-box h1 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: clamp(45px, 7vw, 72px);
+
+            line-height: 1;
+
+            color: #fff4f4;
+
+            margin-bottom: 30px;
+        }
+
+        .note-box h1 span {
+            display: block;
+
+            color: #d96a76;
+
+            margin-top: 8px;
+        }
+
+        .note-text {
+            max-width: 650px;
+
+            margin: auto;
+
+            color: #d9c7ca;
+
+            font-size: 16px;
+
+            line-height: 1.9;
+        }
+
+        .note-text strong {
+            color: #f09aa3;
+
+            font-weight: 500;
+        }
+
+        .funny-note {
+            max-width: 600px;
+
+            margin: 35px auto;
+
+            padding: 22px 25px;
+
+            background: rgba(110, 0, 20, 0.18);
+
+            border-left: 3px solid #a93648;
+
+            border-radius: 12px;
+
+            color: #ead5d8;
+
+            font-size: 15px;
+
+            line-height: 1.8;
+
+            font-style: italic;
+        }
+
+        .note-button {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin-top: 30px;
+
+            padding: 15px 30px;
+
+            color: white;
+
+            text-decoration: none;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #751525,
+                    #a93648
+                );
+
+            border-radius: 50px;
+
+            border: 1px solid rgba(255, 180, 190, 0.15);
+
+            box-shadow:
+                0 12px 30px rgba(110, 0, 20, 0.25);
+
+            transition: 0.3s ease;
+        }
+
+        .note-button:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 18px 40px rgba(150, 20, 40, 0.35);
+        }
+
+        .note-hearts {
+            margin-top: 35px;
+
+            color: #a93648;
+
+            letter-spacing: 10px;
+        }
+
+        @media (max-width: 600px) {
+
+            .note-page {
+                padding: 120px 15px 60px;
+            }
+
+            .note-box {
+                padding: 45px 25px;
+
+                border-radius: 24px;
+            }
+
+            .note-box h1 {
+                font-size: 48px;
+            }
+
+            .note-text {
+                font-size: 14px;
+            }
+
+            .funny-note {
+                font-size: 14px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            <span>❤️</span>
+            Just For You
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="birthday.html">
+                Birthday
+            </a>
+
+            <a href="memories.html">
+                Memories
+            </a>
+
+            <a href="little-note.html" class="active">
+                A Little Note
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ================= NOTE ================= -->
+
+    <main class="note-page">
+
+        <div class="note-box">
+
+            <div class="note-icon">
+
+                <i class="fa-regular fa-heart"></i>
+
+            </div>
+
+
+            <p class="note-label">
+                ✦ just a little note ✦
+            </p>
+
+
+            <h1>
+
+                Before You Go...
+
+                <span>
+                    Read This ❤️
+                </span>
+
+            </h1>
+
+
+            <p class="note-text">
+
+                I know this little website is probably a bit
+                <strong>random</strong>... 😂
+
+                <br><br>
+
+                But sometimes you don't need a huge reason
+                to make someone smile.
+
+                <br><br>
+
+                You just do it because that person is
+                <strong>special</strong>.
+
+                <br><br>
+
+                And honestly...
+
+                I hope while going through these pages,
+                you smiled at least a little. 🥹❤️
+
+            </p>
+
+
+            <div class="funny-note">
+
+                “And yes... I spent way too much time making this.
+                So you better appreciate it. 😂❤️”
+
+            </div>
+
+
+            <p class="note-text">
+
+                One last thing is waiting for you...
+
+                <br>
+
+                But I'm not telling you what it is yet. 👀❤️
+
+            </p>
+
+
+            <!-- Surprise will be connected later -->
+
+            <a href="surprise.html" class="note-button">
+
+                <span>
+                    One Last Thing
+                </span>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+
+            <div class="note-hearts">
+
+                ♥ ♥ ♥
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            Made with a little love & a lot of pagalpan ❤️😂
+        </p>
+
+    </footer>
+
+
+</body>
+</html>
